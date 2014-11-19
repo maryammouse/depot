@@ -30,6 +30,6 @@ production:
   encoding: unicode
   database: store_production
   pool: 5
-  username:
-  password:
+  username: depot
+  password: <%= ENV['DEPOT_DATABASE_PASSWORD'] %>
 
