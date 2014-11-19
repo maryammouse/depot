@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Use pg as the databse for Active Record. Postgres added by Maryam, 11.18.2014
 gem 'pg'
 
+# Use Puma as the app server, Maryam 11.18.2014
+gem 'puma'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
