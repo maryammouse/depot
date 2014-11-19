@@ -47,6 +47,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   # ...
+  #
 
   test "should destroy product" do
     assert_difference('Product.count', -1) do
@@ -54,5 +55,14 @@ class ProductsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to products_path
+  end
+
+  test "can show product" do
+    get :index
+    assert_response :success
+    assert_select '.list_description', 3
+    assert_select 'dt', 3
+    assert_select '.list_actions', 3
+    assert_select 'a', 'New product'
   end
 end
