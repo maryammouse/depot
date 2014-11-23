@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
-  resources :line_items
+  resources :orders
+
+  resources :line_items do
+    post 'decrement', on: :member
+  end
+
 
   resources :carts
 
   get 'store/index'
+  resources :products do
+    get :who_bought, on: :member
+  end
 
   resources :products
 
-  resources :line_items do
-    put 'destroy', on: :member
-  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

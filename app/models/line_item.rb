@@ -1,4 +1,5 @@
 class LineItem < ActiveRecord::Base
+  belongs_to :order
   belongs_to :product
   belongs_to :cart
 
@@ -9,8 +10,5 @@ class LineItem < ActiveRecord::Base
     product.price
   end 
 
-  def kill
-    current_item = LineItem.find(params[:id])
-    current_item.destroy
-  end 
+
 end
